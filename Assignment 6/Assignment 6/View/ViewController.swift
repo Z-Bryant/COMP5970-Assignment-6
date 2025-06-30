@@ -20,25 +20,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func euro(_ sender: UISwitch) {
-        
+        converterLogic.setEuroSwitch(sender.isOn)
     }
     
     @IBAction func pound(_ sender: UISwitch) {
-        
+        converterLogic.setPoundSwitch(sender.isOn)
     }
     
     @IBAction func yen(_ sender: UISwitch) {
-        
+        converterLogic.setYenSwitch(sender.isOn)
     }
     
     @IBAction func peso(_ sender: UISwitch) {
-        
+        converterLogic.setPesoSwitch(sender.isOn)
     }
     
     @IBAction func convert(_ sender: UIButton) {
         if isValid(currencyInput.text!){
             enterUSDLabel.text = "Enter USD:"
-            
+            let myList = converterLogic.convertCurrency(currencyInput.text!)
+            print(myList)
         } else {
             enterUSDLabel.text = "Integer Only!"
         }
@@ -48,26 +49,7 @@ class ViewController: UIViewController {
         return converterLogic.valid(userInput)
                 
     }
-    func convertUSDToEuro(_ userInput: String, conversionRate: Double) -> Double {
-        let euroAmount = Double(Int(userInput)!) * conversionRate
-        totalEuro = round((Double(Int(currencyInput.text!)!) * 0.80) * 100)
-        return round(euroAmount * 100) / 100 // rounded to 2 decimal places
-    }
-    
-    func convertUSDToPound(_ userInput: String, conversionRate: Double) -> Double {
-        let poundAmount = Double(Int(userInput)!) * conversionRate
-        return round(poundAmount * 100) / 100 // rounded to 2 decimal places
-    }
-    
-    func convertUSDToYen(_ userInput: String, conversionRate: Double) -> Double {
-        let yenAmount = Double(Int(userInput)!) * conversionRate
-        return round(yenAmount * 100) / 100 // rounded to 2 decimal places
-    }
-    
-    func convertUSDToPeso(_ userInput: String, conversionRate: Double) -> Double {
-        let pesoAmount = Double(Int(userInput)!) * conversionRate
-        return round(pesoAmount * 100) / 100 // rounded to 2 decimal places
-    }
+
     
 }
 

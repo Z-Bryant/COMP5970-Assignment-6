@@ -56,6 +56,7 @@
                                                 <rect key="frame" x="284" y="0.0" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="currency1:" destination="BYZ-38-t0r" eventType="valueChanged" id="4hD-Gj-x5o"/>
+                                                    <action selector="euro:" destination="BYZ-38-t0r" eventType="valueChanged" id="F29-RE-WnI"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
@@ -73,6 +74,7 @@
                                                 <rect key="frame" x="284" y="0.0" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="currency2:" destination="BYZ-38-t0r" eventType="valueChanged" id="jVW-go-OLR"/>
+                                                    <action selector="pound:" destination="BYZ-38-t0r" eventType="valueChanged" id="qWq-Hd-N5q"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
@@ -90,6 +92,7 @@
                                                 <rect key="frame" x="284" y="0.0" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="currency3:" destination="BYZ-38-t0r" eventType="valueChanged" id="1K6-QP-3lQ"/>
+                                                    <action selector="yen:" destination="BYZ-38-t0r" eventType="valueChanged" id="Kh6-Sx-fLI"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
@@ -107,6 +110,7 @@
                                                 <rect key="frame" x="284" y="0.0" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="currency4:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ece-Ih-fUW"/>
+                                                    <action selector="peso:" destination="BYZ-38-t0r" eventType="valueChanged" id="Laa-4Q-APb"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
