@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var currencyInput: UITextField!
     @IBOutlet weak var enterUSDLabel: UILabel!
     var converterLogic = ConverterLogic()
+    var amount: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +39,26 @@ class ViewController: UIViewController {
     @IBAction func convert(_ sender: UIButton) {
         if isValid(currencyInput.text!){
             enterUSDLabel.text = "Enter USD:"
-            let myList = converterLogic.convertCurrency(currencyInput.text!)
-            print(myList)
+            amount = converterLogic.convertCurrency(currencyInput.text!)
+            
+            self.performSegue(withIdentifier: "toConvertedCurrency", sender: self)
+            
         } else {
             enterUSDLabel.text = "Integer Only!"
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "toConvertedAmount"{
+            let navigation = segue.destination as! ConverterView
+            navigation.amount = amount
+        }
+    }
+    
     func isValid(_ userInput: String) -> Bool{
         return converterLogic.valid(userInput)
-                
     }
 
     

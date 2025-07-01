@@ -54,12 +54,10 @@ struct ConverterLogic {
     
     mutating func convertCurrency(_ userInput: String) -> [String] {
         if euroSwitch == true {
-            //totalEuro = round((Double(Int(currencyInput.text!)!) * 0.80) * 100)
             totalEuro = getTotalEuro(userInput)
             myList[0] = totalEuro
         }
         if poundSwitch == true {
-            
             totalPound = getTotalPound(userInput)
             myList[1] = totalPound
         }
@@ -76,25 +74,21 @@ struct ConverterLogic {
     
     mutating func getTotalEuro(_ userInput: String) -> String {
         let totalEuro = ((Double(Int(userInput)!) * 0.80) * 100) / 100
-        //return round(totalEuro * 100) / 100 // rounded to 2 decimal places
         return String(format: "%.2f", totalEuro)
     }
     
     mutating func getTotalPound(_ userInput: String) -> String {
         let totalPound = ((Double(Int(userInput)!) * 0.73) * 100) / 100
-        //return round(totalEuro * 100) / 100 // rounded to 2 decimal places
         return String(format: "%.2f", totalPound)
     }
     
     mutating func getTotalYen(_ userInput: String) -> String {
         let totalYen = ((Double(Int(userInput)!) * 144.88) * 100) / 100
-        //return round(totalEuro * 100) / 100 // rounded to 2 decimal places
         return String(format: "%.2f", totalYen)
     }
     
     mutating func getTotalPeso(_ userInput: String) -> String {
         let totalPeso = ((Double(Int(userInput)!) * 18.82) * 100) / 100
-        //return round(totalEuro * 100) / 100 // rounded to 2 decimal places
         return String(format: "%.2f", totalPeso)
     }
     
