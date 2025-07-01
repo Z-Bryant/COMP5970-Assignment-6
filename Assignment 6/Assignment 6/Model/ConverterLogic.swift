@@ -16,7 +16,7 @@ struct ConverterLogic {
     var totalPound : String = ""
     var totalYen : String = ""
     var totalPeso : String = ""
-    var myList: [String] = ["", "", "", ""]
+    var myList: [String] = ["0.0", "0.0", "0.0", "0.0"]
     
     mutating func setEuroSwitch(_ switchValue: Bool) {
         if switchValue {
@@ -56,18 +56,30 @@ struct ConverterLogic {
         if euroSwitch == true {
             totalEuro = getTotalEuro(userInput)
             myList[0] = totalEuro
+        } else {
+            totalEuro = "0.00"
+            myList[0] = totalEuro
         }
         if poundSwitch == true {
             totalPound = getTotalPound(userInput)
             myList[1] = totalPound
+        } else {
+            totalPound = "0.00"
+            myList[1] = totalEuro
         }
         if yenSwitch == true {
             totalYen = getTotalYen(userInput)
             myList[2] = totalYen
+        } else {
+            totalYen = "0.00"
+            myList[2] = totalEuro
         }
         if pesoSwitch == true {
             totalPeso = getTotalPeso(userInput)
             myList[3] = totalPeso
+        } else {
+            totalPeso = "0.00"
+            myList[3] = totalEuro
         }
         return myList
     }

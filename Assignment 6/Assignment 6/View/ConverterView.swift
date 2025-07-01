@@ -29,7 +29,7 @@ class ConverterView: UIViewController {
     
     
     @IBAction func backPressed(_ sender: UIButton) {
-        
+        dismiss(animated: true)
     }
     
 
